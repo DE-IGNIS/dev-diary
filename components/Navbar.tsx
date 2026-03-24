@@ -1,20 +1,27 @@
 import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 function Navbar() {
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        width: "100%",
-        zIndex: 100,
-      }}
-    >
-      <Link href="/">Bloggify</Link>
-      <Link href="/">Home</Link>
-      <Link href="/blog">Blog</Link>
-      <Link href="/contact">Contact</Link>
-      <Link href="/about">About</Link>
+    <nav className={styles.navbar}>
+      <Link href="/" className={styles.logo}>
+        Bloggify
+      </Link>
+
+      <div className={styles.navLinks}>
+        <Link href="/" className={styles.navLink}>
+          Home
+        </Link>
+        <Link href="/blog" className={styles.navLink}>
+          Blog
+        </Link>
+        <Link href="/contact" className={styles.navLink}>
+          Contact
+        </Link>
+        <Link href="/about" className={styles.navLink}>
+          About
+        </Link>
+      </div>
     </nav>
   );
 }
