@@ -1,10 +1,9 @@
+import getAllBlogs from "@/lib/blog";
+
 export async function GET() {
-  return new Response(
-    JSON.stringify({
-      success: true,
-    }),
-    {
-      headers: { "Content-Type": "application/json" },
-    },
-  );
+  const blogs = getAllBlogs();
+
+  return new Response(JSON.stringify({ blogs }), {
+    headers: { "Content-Type": "application/json" },
+  });
 }
